@@ -16,7 +16,9 @@ export default function Login() {
                     <img src={logoPreta} alt="Logo Preta" style={styles.logoPreta} /> 
                     <input type="email" placeholder="Insira seu email aqui:" style={styles.input} />
                     <input type="password" placeholder="Insira sua senha aqui:" style={styles.input} />
-                    <button style={styles.button}>Entrar</button>
+                    <Link to="/cart">
+                        <button style={styles.button}>Entrar</button>
+                    </Link>
                     <p style={styles.subtitle}>Ainda não possui uma conta?<br /> 
                     <Link to="/register" style={{ color: '#CFB081', textDecoration: 'underline' }}>Faça seu cadastro clicando aqui!</Link>
                     </p>
