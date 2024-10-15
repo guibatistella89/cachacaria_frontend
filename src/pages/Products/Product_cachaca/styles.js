@@ -23,7 +23,7 @@ const styles = {
     logoHeader: {
         height: '120px', 
     },
-    AmendoimImg: {
+    CachacaImg: {
         height: '380px',
         marginLeft: '8%',
         marginRight: '50px',
@@ -55,7 +55,7 @@ const styles = {
         fontFamily: 'Helvetica',
     },
     title: {
-        color: '#9c6644',
+        color: '#b08968',
         fontSize: '28px', // Tamanho do título
         fontWeight: 'bold',
     },
@@ -78,10 +78,10 @@ const styles = {
     },
     vol: {
         display: 'block',
-        marginTop: '8px',
+        marginTop: '59px',
         fontWeight: 'bold',
         fontSize: '20px',
-        color: '#9c6644',
+        color: '#b08968',
     },
     estoque: {
         display: 'block',

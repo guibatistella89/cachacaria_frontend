@@ -11,11 +11,13 @@ import Canelinha from '../pages/Products/Product_canelinha'
 import Bitter from '../pages/Products/Product_bitter'
 import Banana from '../pages/Products/Product_banana'
 import Amendoim from '../pages/Products/Product_amendoim'
+import Cachaca from '../pages/Products/Product_cachaca'
 
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Limazinho />} />
+      <Route path="/cachaca" element={<Cachaca/>} />
+      <Route path="/limazinho" element={<Limazinho />} />
       <Route path="/amendoim" element={<Amendoim />} />
       <Route path="/banana" element={<Banana />} />
       <Route path="/bitter" element={<Bitter />} />
@@ -23,7 +25,7 @@ const AppRoutes = () => {
       <Route path="/coco" element={<Coco />} />
       <Route path="/maracuja" element={<Maracuja />} />
       <Route path="/menta" element={<Menta />} />
-      <Route path="/vodka" element={<Vodka />} />
+      <Route path="/" element={<Vodka />} />
       <Route path="/login" element={<Login />} />
       <Route path="/home" element={<Home />} />
       <Route path="/register" element={<Register />} />
