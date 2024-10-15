@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./styles.js";
 import logoHeader from "../../../assets/logoheader.jpeg";
-import BitterImg from "../../../assets/Bitter.jpeg";
+import CachacaImg from "../../../assets/Cachaca.jpeg";
 import Carrinho from "../../../assets/carrinho.png"
 import GlobalStyle from "../../../globalStyle/style.js"; // Importando o estilo global
 
@@ -30,25 +30,19 @@ function Limazinho() {
             <div style={styles.container}>
                 <div style={styles.Produto}>
                     <div>
-                        <img src={BitterImg} alt="Logo Cabeçalho" style={styles.BitterImg} />
+                        <img src={CachacaImg} alt="Logo Cabeçalho" style={styles.CachacaImg} />
                     </div>
                     <div style={styles.text}>
-                        <h1 style={styles.title}>Coquetel bitter 900ml</h1>
+                        <h1 style={styles.title}>Cachaça 900ml</h1>
                         <span style={styles.descricao}>
-                        Um drink elegante e equilibrado, com o sabor marcante e levemente amargo do bitter. Ideal para paladares sofisticados, 
-                        oferece uma experiência refinada, perfeita para apreciar momentos especiais.
+                        Cheia de personalidade, com sabor marcante e notas de cana-de-açúcar. 
+                        Perfeita para apreciar pura ou em caipirinhas, trazendo o espírito do Brasil em cada gole.
                         </span>
                         <div style={styles.ingredientes}>
                             <span style={styles.ingredientesText}>Ingredientes: </span>
-                            <span>Água, aguardente de cana, açúcar.</span>
+                            <span>Água, cachaça, açucar.</span>
                             <br />
-                            <span style={styles.ingredientesText}>Aromatizante:</span>
-                            <span>Aroma de bitter.</span>
-                            <br />
-                            <span style={styles.ingredientesText}>Corante:</span>
-                            <span>Caramelo ins 150A.</span>
-                            <br />
-                            <span style={styles.vol}>25% vol.</span>
+                            <span style={styles.vol}>38% vol.</span>
                             <span style={styles.estoque}>Quantidade em estoque: 30</span>
                         </div>
                         <div style={styles.compra}>

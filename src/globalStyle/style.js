@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100%;
     font-family: Arial, sans-serif;
+    background-color: #eee5e9;
   }
 
   #root {
