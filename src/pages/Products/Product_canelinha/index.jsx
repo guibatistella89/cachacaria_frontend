@@ -5,7 +5,7 @@ import CanelinhaImg from "../../../assets/Canelinha.jpeg";
 import Carrinho from "../../../assets/carrinho.png"
 import GlobalStyle from "../../../globalStyle/style.js"; // Importando o estilo global
 
-function Limazinho() {
+function Canelinha() {
     // Estado para a quantidade
     const [quantidade, setQuantidade] = useState(1);
 
@@ -75,4 +75,4 @@ function Limazinho() {
     );
 }
 
-export default Limazinho;
+export default Canelinha;

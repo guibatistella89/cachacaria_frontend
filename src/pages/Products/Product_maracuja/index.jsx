@@ -5,7 +5,7 @@ import MaracujaImg from "../../../assets/Maracuja.jpeg";
 import Carrinho from "../../../assets/carrinho.png"
 import GlobalStyle from "../../../globalStyle/style.js"; // Importando o estilo global
 
-function Limazinho() {
+function Maracuja() {
     // Estado para a quantidade
     const [quantidade, setQuantidade] = useState(1);
 
@@ -75,4 +75,4 @@ function Limazinho() {
     );
 }
 
-export default Limazinho;
+export default Maracuja;

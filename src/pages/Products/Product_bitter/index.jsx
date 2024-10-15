@@ -5,7 +5,7 @@ import BitterImg from "../../../assets/Bitter.jpeg";
 import Carrinho from "../../../assets/carrinho.png"
 import GlobalStyle from "../../../globalStyle/style.js"; // Importando o estilo global
 
-function Limazinho() {
+function Bitter() {
     // Estado para a quantidade
     const [quantidade, setQuantidade] = useState(1);
 
@@ -75,4 +75,4 @@ function Limazinho() {
     );
 }
 
-export default Limazinho;
+export default Bitter;
