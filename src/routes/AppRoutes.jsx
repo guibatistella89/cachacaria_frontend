@@ -12,6 +12,10 @@ import Bitter from '../pages/Products/Product_bitter'
 import Banana from '../pages/Products/Product_banana'
 import Amendoim from '../pages/Products/Product_amendoim'
 import Cachaca from '../pages/Products/Product_cachaca'
+import Cart from "../pages/Cart";
+import Checkout from "../pages/Checkout";
+import Profile from '../pages/Profile'
+import Catalogo from '../pages/Catalog'
 
 const AppRoutes = () => {
   return (
@@ -29,6 +33,10 @@ const AppRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/home" element={<Home />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/cart" element={<Cart />} />
+      <Route path="/checkout" element={<Checkout />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/catalogo" element={<Catalogo />} />
     </Routes>
   );
 };
