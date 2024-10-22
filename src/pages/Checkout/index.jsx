@@ -1,77 +1,33 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import logoHeader from "../../assets/logoheader.jpeg";
-import { CheckoutContainer, Header, FormSection, InputGroup, AddressSection, FreightAndSummary, FreightSection, SummarySection, ButtonGroup } from './styles';
+import GlobalStyle from "../../globalStyle/style.js"; // Importando o estilo global
+import styles, { CheckoutContainer, Header, FormSection, InputGroup, AddressSection, FreightAndSummary, FreightSection, SummarySection, ButtonGroup } from './styles';
 
 const Checkout = () => {
   return (
+    <div className='body' style={styles.body}>
+      <GlobalStyle />
+      <HeaderPage />
+      <Panel />
+    </div>
+  );
+};
+
+export default Checkout;
+
+function Panel() {
+  return (
     <CheckoutContainer>
-      <Header>
-        <img src={logoHeader} alt="Logo Cabeçalho" />
-      </Header>
-
       <h2>Meus Dados</h2>
-      <div className="form-container">
-        <FormSection>
-          <h3>Dados Pessoais:</h3>
-          <InputGroup>
-            <label>Nome</label>
-            <input type="text" placeholder="Luíza Fernanda Ribeiro dos Santos" />
-          </InputGroup>
-          <InputGroup>
-            <label>Telefone Celular</label>
-            <input type="text" placeholder="(95) 2547-1891" />
-          </InputGroup>
-          <InputGroup>
-            <label>Whatsapp</label>
-            <input type="text" placeholder="(95) 99912-6177" />
-          </InputGroup>
-          <InputGroup>
-            <label>E-mail</label>
-            <input type="email" placeholder="luiza.ferbi@mail.com" />
-          </InputGroup>
-          <InputGroup>
-            <label>Data de Nascimento</label>
-            <input type="date" />
-          </InputGroup>
-          <ButtonGroup>
-            <button className="save">Salvar</button>
-            <button className="logout">Logout</button>
-          </ButtonGroup>
-        </FormSection>
-
-        <AddressSection>
-          <h3>Endereço de Entrega:</h3>
-          <InputGroup>
-            <label>CEP</label>
-            <input type="text" placeholder="79900-502" />
-          </InputGroup>
-          <InputGroup>
-            <label>Logradouro</label>
-            <input type="text" placeholder="Rua Madalena Manvailer" />
-          </InputGroup>
-          <InputGroup>
-            <label>Número</label>
-            <input type="text" placeholder="396" />
-          </InputGroup>
-          <InputGroup>
-            <label>Complemento</label>
-            <input type="text" placeholder="Apto 4" />
-          </InputGroup>
-          <InputGroup>
-            <label>Bairro</label>
-            <input type="text" placeholder="Parque dos Ipês III" />
-          </InputGroup>
-          <InputGroup>
-            <label>Cidade</label>
-            <input type="text" placeholder="Ponta Porã" />
-          </InputGroup>
-          <InputGroup>
-            <label>UF</label>
-            <input type="text" placeholder="MS" />
-          </InputGroup>
-        </AddressSection>
+      <div className='meus-dados'>
+        <div className="form-container">
+          <DataForm />
+          <AddressForm />
+        </div>
+        <ButtonContainer />
       </div>
+
 
       <FreightAndSummary>
         <FreightSection>
@@ -112,6 +68,86 @@ const Checkout = () => {
       </ButtonGroup>
     </CheckoutContainer>
   );
-};
+}
 
-export default Checkout;
+//temporário <<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>
+function HeaderPage() {
+  return (
+    <Header>
+      <img src={logoHeader} alt="Logo Cabeçalho" />
+    </Header>
+  );
+}
+
+function DataForm() {
+  return (
+    <FormSection>
+      <h3>Dados Pessoais:</h3>
+      <InputGroup>
+        <label>Nome</label>
+        <input type="text" placeholder="Luíza Fernanda Ribeiro dos Santos" />
+      </InputGroup>
+      <InputGroup>
+        <label>Telefone Celular</label>
+        <input type="text" placeholder="(95) 2547-1891" />
+      </InputGroup>
+      <InputGroup>
+        <label>Whatsapp</label>
+        <input type="text" placeholder="(95) 99912-6177" />
+      </InputGroup>
+      <InputGroup>
+        <label>E-mail</label>
+        <input type="email" placeholder="luiza.ferbi@mail.com" />
+      </InputGroup>
+      <InputGroup>
+        <label>Data de Nascimento</label>
+        <input type="date" />
+      </InputGroup>
+    </FormSection>
+  );
+}
+
+function AddressForm() {
+  return (
+    <AddressSection>
+      <h3>Endereço de Entrega:</h3>
+      <InputGroup>
+        <label>CEP</label>
+        <input type="text" placeholder="79900-502" />
+      </InputGroup>
+      <InputGroup>
+        <label>Logradouro</label>
+        <input type="text" placeholder="Rua Madalena Manvailer" />
+      </InputGroup>
+      <InputGroup>
+        <label>Número</label>
+        <input type="text" placeholder="396" />
+      </InputGroup>
+      <InputGroup>
+        <label>Complemento</label>
+        <input type="text" placeholder="Apto 4" />
+      </InputGroup>
+      <InputGroup>
+        <label>Bairro</label>
+        <input type="text" placeholder="Parque dos Ipês III" />
+      </InputGroup>
+      <InputGroup>
+        <label>Cidade</label>
+        <input type="text" placeholder="Ponta Porã" />
+      </InputGroup>
+      <InputGroup>
+        <label>UF</label>
+        <input type="text" placeholder="MS" />
+      </InputGroup>
+    </AddressSection>
+  );
+}
+
+function ButtonContainer() {
+  return (
+    <ButtonGroup>
+      <button className="save">Salvar</button>
+      <button className="logout">Logout</button>
+    </ButtonGroup>
+  );
+}
