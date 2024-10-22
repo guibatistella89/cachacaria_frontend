@@ -1,9 +1,24 @@
 import styled from 'styled-components';
 
+const styles = {
+  body: {
+    margin: '0',
+    padding: '0',
+    width: '100%',
+    height: '100%',
+    display: 'flex', // Certifica que o conteúdo se expanda corretamente
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+};
+
+export default styles;
+
 export const CheckoutContainer = styled.div`
+
   width: 95vw;
   padding: 30px;
-  background-color: #f9f9f9;
+  
   margin-top: 120px;
 
   h2 {
@@ -13,9 +28,17 @@ export const CheckoutContainer = styled.div`
   }
 
   .form-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+    display: flex;        
+
+    @media (max-width: 600px) {
+      flex-direction: column; /* Muda para coluna em telas pequenas */
+    }
+  }
+
+  .meus-dados {
+    padding: 20px 20px 20px 20px;
+    border-radius: 8px;
+    border: 1px solid #000;    
   }
 `;
 
@@ -38,20 +61,29 @@ export const Header = styled.header`
 `;
 
 export const FormSection = styled.div`
-  width: 48%;
+  width: 50%;
+  flex: 1;
+  padding: 0 25px 0 25px;
 
-  h3 {
-    font-size: 22px;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+
+  h3 {    
+    font-size: 18px;
     margin-bottom: 30px;
+    text-decoration: underline; /* Adiciona a sublinha */
+    text-decoration-color: #000; /* (Opcional) Define a cor da sublinha */
+    text-decoration-thickness: 1px; /* (Opcional) Define a espessura da sublinha */
   }
 
   input {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 12px;
   }
 `;
 
@@ -60,10 +92,11 @@ export const AddressSection = styled(FormSection)``;
 export const InputGroup = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 6px;
+  margin-bottom: 6px;  
 
-  label {
+  label {    
     margin-bottom: 4px;
+    font-size: 14px;
     font-weight: bold;
   }
 `;
@@ -79,7 +112,7 @@ export const ButtonGroup = styled.div`
     border-radius: 6px;
     border: none;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 15px;
     transition: background-color 0.3s ease;
   }
 
@@ -148,7 +181,7 @@ export const FreightSection = styled.div`
     }
 
     label {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 `;
@@ -167,7 +200,7 @@ export const SummarySection = styled.div`
   }
 
   p {
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 5px;
 
     span {
