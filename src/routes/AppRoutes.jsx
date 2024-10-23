@@ -12,9 +12,16 @@ import Bitter from '../pages/Products/Product_bitter'
 import Banana from '../pages/Products/Product_banana'
 import Amendoim from '../pages/Products/Product_amendoim'
 import Cachaca from '../pages/Products/Product_cachaca'
+import Cart from "../pages/Cart";
+import Checkout from "../pages/Checkout";
+import Profile from '../pages/Profile'
+import Catalogo from '../pages/Catalog'
+
+
 
 const AppRoutes = () => {
   return (
+
     <Routes>
       <Route path="/cachaca" element={<Cachaca/>} />
       <Route path="/limazinho" element={<Limazinho />} />
@@ -29,7 +36,17 @@ const AppRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/home" element={<Home />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/cart" element={<Cart />} />
+      <Route path="/checkout" element={<Checkout />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/catalogo" element={<Catalogo />} />
+      <Route path="/navbar" element={<Navbar />} />
     </Routes>
+
+
+
+    
+
   );
 };
 
