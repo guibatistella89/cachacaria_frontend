@@ -3,6 +3,7 @@ import GlobalStyle from "../../globalStyle/style.js";
 import logoHeader from "../../assets/logoheader.jpeg";
 import NamoImg from "../../assets/Dia_dos_namorados.jpg";
 import styles from "./styles.js";
+import Navbar from "../../components/navBar.jsx";
 
 function Home() {
     const [activeSlide, setActiveSlide] = useState(0);
@@ -13,10 +14,9 @@ function Home() {
 
     return (
         <div>
-            <GlobalStyle />
-            <header style={styles.header}>
-                <img src={logoHeader} alt="Logo Cabeçalho" style={styles.logoHeader} />
-            </header>
+            
+            <div><Navbar /></div>
+            
 
             <div style={styles.slider}> 
                 <div style={{ ...styles.slides, transform: `translateX(-${activeSlide * 100}%)` }}>

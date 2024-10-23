@@ -1,7 +1,10 @@
 import React from "react";
 import GlobalStyle from "../globalStyle/style.js";
-import logo from "../assets/logoheader.jpeg";
+import logo from "../assets/LOGO.png";
 import styles from "./style.js";
+import menu from "../assets/icon_perfil.png";
+import perfil from "../assets/icon_menu.png";
+import lupa from "../assets/lupa_icon.png";
 
 function Navbar() {
     return (
@@ -12,12 +15,18 @@ function Navbar() {
                 <div style={styles.searchContainer}>
                     <input type="text" placeholder="Buscar" style={styles.searchInput} />
                     <button style={styles.searchButton}>
-                        <span role="img" aria-label="search">🔍</span>
+                        <span role="img" aria-label="search"><img src={lupa} style={styles.lupa} /></span>
                     </button>
                 </div>
                 <div style={styles.menuContainer}>
-                    <a href="#catalog" style={styles.menuLink}>Catálogo</a>
-                    <a href="#login" style={styles.menuLink}>Entrar / Registrar-se</a>
+                    <div style={styles.teste1}>
+                        <img src={menu} alt="menuCabecalho" style={styles.menu} />
+                        <a href="#catalog" style={styles.menuLink}>Catálogo</a>
+                    </div>
+                    <div style={styles.teste1}>
+                        <img src={perfil} alt="perfilCabacalho" style={styles.perfil} />
+                        <a href="#login" style={styles.menuLink}>Entrar / Registrar-se</a>
+                    </div>
                 </div>
             </header>
             <nav style={styles.navBar}>
