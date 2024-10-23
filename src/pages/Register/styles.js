@@ -24,7 +24,7 @@ const styles = {
         padding: '40px',
         fontSize: '30px',
         fontWeight: 'bold',
-        marginBottom: '0px',
+        marginBottom: '-200px',
         color: '#4b3d2c',
     },
     loginContainer: {

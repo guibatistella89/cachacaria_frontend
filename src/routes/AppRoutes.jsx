@@ -18,7 +18,6 @@ import Profile from '../pages/Profile'
 import Catalogo from '../pages/Catalog'
 
 
-
 const AppRoutes = () => {
   return (
 
@@ -40,7 +39,7 @@ const AppRoutes = () => {
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/catalogo" element={<Catalogo />} />
-      <Route path="/navbar" element={<Navbar />} />
+
     </Routes>
 
 
