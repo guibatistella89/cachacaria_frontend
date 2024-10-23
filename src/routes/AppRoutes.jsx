@@ -17,8 +17,10 @@ import Checkout from "../pages/Checkout";
 import Profile from '../pages/Profile'
 import Catalogo from '../pages/Catalog'
 
+
 const AppRoutes = () => {
   return (
+
     <Routes>
       <Route path="/cachaca" element={<Cachaca/>} />
       <Route path="/limazinho" element={<Limazinho />} />
@@ -37,7 +39,13 @@ const AppRoutes = () => {
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/catalogo" element={<Catalogo />} />
+
     </Routes>
+
+
+
+    
+
   );
 };
 
