@@ -1,8 +1,8 @@
-import { GlobalButtonLayout } from "../globalStyle/style.js"; // Importando o estilo global
+import { GlobalButtonLayout } from "../globalStyle/style.js";
 import { FormSection, InputGroup, AddressSection, DataContainer } from '../components/style.js';
 
 
-export default function DataPanel() {
+export default function DataPanel({ greenButtonText, redButtonText }) {
     return (
         <DataContainer>
             <h2>Meus Dados</h2>
@@ -11,7 +11,7 @@ export default function DataPanel() {
                     <DataForm />
                     <AddressForm />
                 </div>
-                <ButtonContainer />
+                <ButtonContainer greenButtonText={greenButtonText} redButtonText={redButtonText}/>
             </div>
         </DataContainer >
     );
@@ -89,11 +89,11 @@ function AddressForm() {
     );
 }
 
-function ButtonContainer() {
+function ButtonContainer({greenButtonText, redButtonText}) {
     return (
         <div className='SumaryBtn'>
-            <GlobalButtonLayout className="greenBtn" onClick={() => { }}>Salvar</GlobalButtonLayout>
-            <GlobalButtonLayout className="redBtn" onClick={() => { }}>Logout</GlobalButtonLayout>
+            <GlobalButtonLayout className="greenBtn" onClick={() => { }}>{greenButtonText}</GlobalButtonLayout>
+            <GlobalButtonLayout className="redBtn" onClick={() => { }}>{redButtonText}</GlobalButtonLayout>
         </div>
     );
 }
