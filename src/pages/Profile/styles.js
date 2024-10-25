@@ -19,6 +19,10 @@ export const ProfileContainer = styled.div`
 
   width: 95vw; 
   margin-bottom: 30px; 
+
+  .DataPanel{
+    margin-bottom: 20px;
+  }
   
   .SumaryBtn {
     display: flex;    
@@ -31,5 +35,6 @@ export const ProfileContainer = styled.div`
       gap: 5px;
       align-items: center; 
     }    
-  }  
+  } 
+
 `;

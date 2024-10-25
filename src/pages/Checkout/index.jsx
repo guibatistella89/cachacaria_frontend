@@ -9,8 +9,7 @@ const Checkout = () => {
   return (
     <div>
       <Navbar />
-      <div className='body' style={styles.body}>
-        <GlobalStyle />        
+      <div className='body' style={styles.body}>               
         <FullCheckout />
       </div>
     </div>
@@ -19,12 +18,10 @@ const Checkout = () => {
 
 export default Checkout;
 
-
-
 function FullCheckout() {
   return (
     <CheckoutContainer>
-      <DataPanel />
+      <DataPanel greenButtonText="Salvar Informações" redButtonText="Sair"/>
       <FreightAndSummary>
         <FreightSection>
           <h3>Frete</h3>
