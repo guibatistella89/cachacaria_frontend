@@ -16,14 +16,12 @@ import Cart from "../pages/Cart";
 import Checkout from "../pages/Checkout";
 import Profile from '../pages/Profile'
 import Catalogo from '../pages/Catalog'
-import OrderList from '../components/orderList'
-
 
 const AppRoutes = () => {
   return (
 
     <Routes>
-      <Route path="/cachaca" element={<Cachaca/>} />
+      <Route path="/cachaca" element={<Cachaca />} />
       <Route path="/limazinho" element={<Limazinho />} />
       <Route path="/amendoim" element={<Amendoim />} />
       <Route path="/banana" element={<Banana />} />
@@ -40,13 +38,7 @@ const AppRoutes = () => {
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/catalogo" element={<Catalogo />} />
-      <Route path="/orderlist" element={<OrderList />} />
     </Routes>
-
-
-
-    
-
   );
 };
 
