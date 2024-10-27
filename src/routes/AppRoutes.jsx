@@ -15,14 +15,14 @@ import Cachaca from '../pages/Products/Product_cachaca'
 import Cart from "../pages/Cart";
 import Checkout from "../pages/Checkout";
 import Profile from '../pages/Profile'
-import Catalogo from '../pages/Catalog'
+import Catalog from '../pages/Catalog'
 
 const AppRoutes = () => {
   return (
 
     <Routes>
       <Route path="/cachaca" element={<Cachaca/>} />
-      <Route path="/limazinho" element={<Limazinho />} />
+      <Route path="/limaozinho" element={<Limazinho />} />
       <Route path="/amendoim" element={<Amendoim />} />
       <Route path="/banana" element={<Banana />} />
       <Route path="/bitter" element={<Bitter />} />
@@ -30,14 +30,14 @@ const AppRoutes = () => {
       <Route path="/coco" element={<Coco />} />
       <Route path="/maracuja" element={<Maracuja />} />
       <Route path="/menta" element={<Menta />} />
-      <Route path="/" element={<Vodka />} />
+      <Route path="/vodka" element={<Vodka />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/home" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="/register" element={<Register />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/profile" element={<Profile />} />
-      <Route path="/catalogo" element={<Catalogo />} />      
+      <Route path="/catalog" element={<Catalog />} />      
     </Routes>
   );
 };
