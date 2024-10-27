@@ -25,16 +25,6 @@ const GlobalStyle = createGlobalStyle`
     max-width: 100%;
     height: auto;
   }
-
-  h2 {
-  display: inline-block;
-  max-width: 400px; 
-  font-size: 28px;
-  margin-bottom: 15px;
-  color: #8e5e1e;
-  border-radius: 8px;
-  border: 1px solid #000;  
-  padding: 5px;
 }
 `;
 
