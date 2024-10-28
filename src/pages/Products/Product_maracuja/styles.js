@@ -11,18 +11,6 @@ const styles = {
         justifyContent: 'flex-start',
         caretColor: 'transparent',
     },
-    header: {
-        width: '100%',
-        padding: '0px',
-        backgroundColor: '#000000',
-        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-        display: 'flex',
-        justifyContent: 'center',
-        marginBottom: '20px',
-    },
-    logoHeader: {
-        height: '120px', 
-    },
     MaracujaImg: {
         height: '380px',
         marginLeft: '8%',
@@ -151,3 +139,63 @@ const styles = {
 }
 
 export default styles;
+
+export const CartContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #eee5e9;
+`;
+
+export const MostWantedSection = styled.section`
+  margin-top: 50px;
+  width: 100%;
+  max-width: 1600px;
+
+  h2 {
+    font-size: 26px;
+    margin-bottom: 30px;
+    color: red;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    grid-template-rows: repeat(2, auto); /* 2 linhas */
+    gap: 20px;
+  }
+`;
+
+export const ProductCard = styled.div`
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  display: flex; /* Adiciona flexbox para organizar o layout */
+  //align-items: center; /* Alinha verticalmente os itens */
+  
+
+  img {
+    width: 120px;
+    height: auto;
+    margin:15PX;
+    margin-right: 20px; /* Espaço entre a imagem e o conteúdo */
+  }
+
+  .info {
+    margin-top:20px;
+    text-align: left; /* Alinha o texto à esquerda */
+    h3 {
+      font-size: 20px;
+      margin: 0px 0;
+    }
+
+    p {
+      margin-top:20px;
+      font-size: 20px;
+      color: #333;
+      font-weight: bold;
+    }
+  }
+`;

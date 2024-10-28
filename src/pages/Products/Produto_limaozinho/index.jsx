@@ -1,9 +1,20 @@
 import React, { useState } from "react";
 import styles from "./styles.js";
-import logoHeader from "../../../assets/logoheader.jpeg";
 import LimazinhoImg from "../../../assets/Limaozinho.jpeg";
 import Carrinho from "../../../assets/carrinho.png"
 import GlobalStyle from "../../../globalStyle/style.js"; // Importando o estilo global
+import Navbar from "../../../components/navBar.jsx";
+import cachacaEscuro from "../../../assets/cachacaEscuro.jpg";
+import vodkaEscuro from "../../../assets/vodkaEscuro.jpg";
+import bitterEscuro from "../../../assets/bitterEscuro.jpg";
+import canelinhaEscuro from "../../../assets/canelinhaEscuro.jpg";
+import bananaEscuro from "../../../assets/bananaEscuro.jpg";
+import limaozinhoEscuro from "../../../assets/limaozinhoEscuro.jpg";
+import {
+    CartContainer,
+    MostWantedSection,
+    ProductCard,
+} from './styles';
 
 function Limazinho() {
     // Estado para a quantidade
@@ -24,9 +35,7 @@ function Limazinho() {
     return (
         <div style={styles.body}>
             <GlobalStyle />
-            <header style={styles.header}>
-                <img src={logoHeader} alt="Logo Cabeçalho" style={styles.logoHeader} />
-            </header>
+            <div><Navbar /></div>
             <div style={styles.container}>
                 <div style={styles.Produto}>
                     <div>
@@ -39,7 +48,7 @@ function Limazinho() {
                             equilibrando bem pratos mais ricos.
                         </span>
                         <div style={styles.ingredientes}>
-                            <span style={styles.ingredientesText}>Ingredientes: </span>
+                            <span style={styles.ingredientesText}>Ingredientes:</span>
                             <span>Água, aguardente de cana, açúcar, suco concentrado de limão.</span>
                             <br />
                             <span style={styles.ingredientesText}>Acidulante:</span>
@@ -74,6 +83,56 @@ function Limazinho() {
                     </div>
                 </div>
             </div>
+            {/* Produtos mais procurados */}
+            <CartContainer>
+                <MostWantedSection>
+                    <h2>Mais procurados</h2>
+                    <div className="product-grid">
+                        <ProductCard>
+                            <img src={vodkaEscuro} alt="Vodka" />
+                            <div className="info">
+                                <h3>VODKA 900ml</h3>
+                                <p>R$ 15,00</p>
+                            </div>
+                        </ProductCard>
+                        <ProductCard>
+                            <img src={cachacaEscuro} alt="Cachaça" />
+                            <div className="info">
+                                <h3>CACHAÇA 900ml</h3>
+                                <p>R$ 15,00</p>
+                            </div>
+                        </ProductCard>
+                        <ProductCard>
+                            <img src={canelinhaEscuro} alt="Canelinha" />
+                            <div className="info">
+                                <h3>CANELINHA 900ml</h3>
+                                <p>R$ 15,00</p>
+                            </div>
+                        </ProductCard>
+                        <ProductCard>
+                            <img src={bananaEscuro} alt="Banana" />
+                            <div className="info">
+                                <h3>BANANA 900ml</h3>
+                                <p>R$ 15,00</p>
+                            </div>
+                        </ProductCard>
+                        <ProductCard>
+                            <img src={limaozinhoEscuro} alt="Limãozinho" />
+                            <div className="info">
+                                <h3>LIMÃOZINHO 900ml</h3>
+                                <p>R$ 15,00</p>
+                            </div>
+                        </ProductCard>
+                        <ProductCard>
+                            <img src={bitterEscuro} alt="Bitter" />
+                            <div className="info">
+                                <h3>BITTER 900ml</h3>
+                                <p>R$ 15,00</p>
+                            </div>
+                        </ProductCard>
+                    </div>
+                </MostWantedSection>
+            </CartContainer>
         </div>
     );
 }
