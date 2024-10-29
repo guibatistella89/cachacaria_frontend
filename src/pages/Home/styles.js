@@ -1,6 +1,3 @@
-import { useBlocker } from 'react-router-dom';
-import styled from 'styled-components';
-
 const styles = {
     header: {
         width: '100%',
@@ -47,7 +44,7 @@ const styles = {
     },
     slides: {
         display: 'flex',
-        transition: 'transform 3s ease-in-out',
+        transition: 'transform 1s ease-in-out',
     },
     slide: {
         minWidth: '100%',
@@ -67,6 +64,20 @@ const styles = {
         fontSize: '18px',
         fontWeight: 'bold',
     },
+    dataPrev: {
+        display: 'flex',
+        flexDirection: 'column',
+        marginRight:'50px',
+        textAlign: 'center', // Alinha o texto ao centro
+        color: '#AB0606',
+        fontFamily: 'itali',
+        fontSize: '18px',
+        fontWeight: 'bold',
+    },
+    text11: {
+        fontSize: '30px',
+        textColor: '#fffff',
+    },
     inactiveButton: {
         display: 'flex',
         alignItems: 'center',
@@ -74,7 +85,7 @@ const styles = {
         marginTop: '10px', // Espaçamento acima do botão
         padding: '10px 20px', // Padding para o botão
         background: 'linear-gradient(to left, #C2A1A1 20%, #A31919 60%)',
-        color: '#450346', // Cor do texto
+        color: '#black', // Cor do texto
         borderRadius: '5px', // Bordas arredondadas
         fontFamily: 'itali',
         fontSize: '20px',
@@ -90,10 +101,43 @@ const styles = {
         borderRadius: '31px', // Adicione um borderRadius conforme seu desejo
         zIndex: 1,            // Garante que a imagem fique acima de outros elementos
     },
+    image2: {
+        position: 'absolute',  // Isso vai fixar a imagem na posição desejada
+        left: '150%',           // Centraliza a imagem
+        transform: 'translateX(-50%)', // Centraliza a imagem horizontalmente
+        width: '430px',
+        borderRadius: '31px', // Adicione um borderRadius conforme seu desejo
+        zIndex: 1,            // Garante que a imagem fique acima de outros elementos
+    },
+    image3: {
+        position: 'absolute',  // Isso vai fixar a imagem na posição desejada
+        left: '250%',           // Centraliza a imagem
+        transform: 'translateX(-50%)', // Centraliza a imagem horizontalmente
+        width: '430px',
+        borderRadius: '31px', // Adicione um borderRadius conforme seu desejo
+        zIndex: 1,            // Garante que a imagem fique acima de outros elementos
+    },
+    image4: {
+        position: 'absolute',  // Isso vai fixar a imagem na posição desejada
+        left: '350%',           // Centraliza a imagem
+        transform: 'translateX(-50%)', // Centraliza a imagem horizontalmente
+        width: '430px',
+        borderRadius: '31px', // Adicione um borderRadius conforme seu desejo
+        zIndex: 1,            // Garante que a imagem fique acima de outros elementos
+    },
+    image5: {
+        position: 'absolute',  // Isso vai fixar a imagem na posição desejada
+        left: '450%',           // Centraliza a imagem
+        transform: 'translateX(-50%)', // Centraliza a imagem horizontalmente
+        width: '430px',
+        borderRadius: '31px', // Adicione um borderRadius conforme seu desejo
+        zIndex: 1,            // Garante que a imagem fique acima de outros elementos
+    },
     image: {
         width: '70%',
         height: '100%',
         objectFit: 'cover',
+        borderRadius: '31px',
     },
     manualNavigation: {
         display: 'flex',

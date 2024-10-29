@@ -20,7 +20,7 @@ const styles = {
     backgroundColor: '#e8d5b7',
     borderRadius: '25px',
     padding: '5px 10px',
-    width: '50%',
+    width: '70%',
   },
   searchInput: {
     border: 'none',
@@ -93,16 +93,13 @@ const styles = {
 
 export default styles;
 
-
-
-//Inicio do estilo <<Meus Dados>> (Profile e Checkout)
 export const DataContainer = styled.div`
 
 .form-container {
   display: flex;        
 
   @media (max-width: 600px) {
-    flex-direction: column; /* Muda para coluna em telas pequenas */
+    flex-direction: column;
   }
 }
 
@@ -119,7 +116,7 @@ export const DataContainer = styled.div`
 
     @media (max-width: 600px) {
     width: 100%;
-      flex-direction: column; /* Muda para coluna em telas pequenas */        
+      flex-direction: column;      
       gap: 5px;
       align-items: center; 
   }
@@ -139,9 +136,9 @@ export const FormSection = styled.div`
   h3 {    
     font-size: 18px;
     margin-bottom: 30px;
-    text-decoration: underline; /* Adiciona a sublinha */
-    text-decoration-color: #000; /* (Opcional) Define a cor da sublinha */
-    text-decoration-thickness: 1px; /* (Opcional) Define a espessura da sublinha */
+    text-decoration: underline;
+    text-decoration-color: #000;
+    text-decoration-thickness: 1px;
   }
 
   input, select {
@@ -167,10 +164,6 @@ export const InputGroup = styled.div`
     font-weight: bold;
   }
 `;
-
-//Fim do estilo <<Meus Dados>>
-
-//Inicio do estilo <<Order List>> (Profile)
 
 export const OrdersContainer = styled.div`
 
@@ -199,5 +192,3 @@ export const OrdersContainer = styled.div`
 }
 
 `;
-
-//Fim do estilo <<Order List>>

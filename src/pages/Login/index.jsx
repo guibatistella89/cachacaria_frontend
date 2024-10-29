@@ -8,7 +8,9 @@ export default function Login() {
     return (
         <div style={styles.pageContainer}>
             <header style={styles.header}>
+            <a href="/">
                 <img src={logoHeader} alt="Logo Cabeçalho" style={styles.logoHeader} />
+            </a>
             </header>
             <h1 style={styles.title}>Bem-vindo! Faça seu login aqui.</h1>
             <div style={styles.loginContainer}> 
