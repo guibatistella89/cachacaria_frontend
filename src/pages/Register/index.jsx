@@ -21,7 +21,7 @@ export default function Register() {
                     <input type="password" placeholder="Confirme sua senha aqui:" style={styles.input} />
                     <button style={styles.button}>Cadastrar</button>
                     <p style={styles.subtitle}>Já possui uma conta?<br /> 
-                    <Link to="/" style={{ color: '#CFB081', textDecoration: 'underline' }}>Faça seu login clicando aqui!</Link>
+                    <Link to="/login" style={{ color: '#CFB081', textDecoration: 'underline' }}>Faça seu login clicando aqui!</Link>
                     </p>
                 </div>
             </div>

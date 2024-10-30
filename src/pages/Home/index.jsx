@@ -5,7 +5,6 @@ import styles from "./styles.js";
 import Navbar from "../../components/navBar.jsx";
 import Footer from "../../components/Footer.jsx";
 
-
 function Home() {
     const [activeSlide, setActiveSlide] = useState(0);
 
@@ -15,107 +14,105 @@ function Home() {
 
     return (
         <div>
-            <div><Navbar /></div>
-            
-            <div style={styles.slider}> 
+            <Navbar />
+
+            <div style={styles.slider}>
                 <div style={{ ...styles.slides, transform: `translateX(-${activeSlide * 100}%)` }}>
-                    <div style={styles.slide}>
-                        <div style={styles.tdesconto}>
-                            <h1>20% DE DESCONTO <br></br>COM O CUPOM:</h1>
-                            <div style={styles.inactiveButton}>%20ROMANTICA</div>
-                            <img src={NamoImg} alt="Imagem1" style={styles.image1} />
-                            <h1 >DIA DOS NAMORADOS</h1>
-                            <div style={styles.text11}><br></br>Válido até: 12/06</div>
-                        </div>
-                    </div>
-
-                    <div style={styles.slide}>
-                    <div style={styles.tdesconto}>
-                            <h1>20% DE DESCONTO COM <br></br>O CUPOM:</h1>
-                            <div style={styles.inactiveButton}>%20ROMANTICA</div>
-                        </div>
-                        <img src={NamoImg} alt="Imagem2" style={styles.image2} />
-                        <div style={styles.dataPrev}>
-                            <h1 >DIA DOS NAMORADOS</h1>
-                            <div style={styles.text11}><br></br>Válido até: 12/06</div>
-                        </div>
-                    </div>
-
-                    <div style={styles.slide}>
-                    <div style={styles.tdesconto}>
-                            <h1>20% DE DESCONTO COM <br></br>O CUPOM:</h1>
-                            <div style={styles.inactiveButton}>%20ROMANTICA</div>
-                        </div>
-                        <img src={NamoImg} alt="Imagem3" style={styles.image3} />
-                        
-                    </div>
-
-                    <div style={styles.slide}>
-                    <div style={styles.tdesconto}>
-                            <h1>20% DE DESCONTO COM <br></br>O CUPOM:</h1>
-                            <div style={styles.inactiveButton}>%20ROMANTICA</div>
-                        </div>
-                        <img src={NamoImg} alt="Imagem4" style={styles.image4} />
-                    </div>
-
-                    <div style={styles.slide}>
-                    <div style={styles.tdesconto}>
-                            <h1>20% DE DESCONTO COM <br></br>O CUPOM:</h1>
-                            <div style={styles.inactiveButton}>%20ROMANTICA</div>
-                        </div>
-                        <img src={NamoImg} alt="Imagem5" style={styles.image5} />
-                    </div>
                     
+                    {/* Slide 1 */}
                     <div style={styles.slide}>
-                        <img src={NamoImg} alt="Imagem6" style={styles.image6} />
-                    </div>
+    <div style={styles.dataPrevContainer}>
+        <h1>20% DE DESCONTO COM <br />O CUPOM:</h1>
+        <div style={styles.inactiveButton}>%20ROMANTICA</div>
+    </div>
+    <img src={NamoImg} alt="Imagem1" style={styles.image} />
+    <div style={styles.dataPrev}>
+        <h1>DIA DOS NAMORADOS</h1>
+        <div>Válido até: 12/06</div>
+    </div>
+</div>
+
+                    {/* Slide 2 */}
+                    <div style={styles.slide}>
+    <div style={styles.dataPrevContainer}>
+        <h1>20% DE DESCONTO COM <br />O CUPOM:</h1>
+        <div style={styles.inactiveButton}>%20ROMANTICA</div>
+    </div>
+    <img src={NamoImg} alt="Imagem1" style={styles.image} />
+    <div style={styles.dataPrev}>
+        <h1>DIA DOS NAMORADOS</h1>
+        <div>Válido até: 12/06</div>
+    </div>
+</div>
+
+                    {/* Slide 3 */}
+                    <div style={styles.slide}>
+    <div style={styles.dataPrevContainer}>
+        <h1>20% DE DESCONTO COM <br />O CUPOM:</h1>
+        <div style={styles.inactiveButton}>%20ROMANTICA</div>
+    </div>
+    <img src={NamoImg} alt="Imagem1" style={styles.image} />
+    <div style={styles.dataPrev}>
+        <h1>DIA DOS NAMORADOS</h1>
+        <div>Válido até: 12/06</div>
+    </div>
+</div>
+
+                    {/* Slide 4 */}
+                    <div style={styles.slide}>
+    <div style={styles.dataPrevContainer}>
+        <h1>20% DE DESCONTO COM <br />O CUPOM:</h1>
+        <div style={styles.inactiveButton}>%20ROMANTICA</div>
+    </div>
+    <img src={NamoImg} alt="Imagem1" style={styles.image} />
+    <div style={styles.dataPrev}>
+        <h1>DIA DOS NAMORADOS</h1>
+        <div>Válido até: 12/06</div>
+    </div>
+</div>
+
+                    {/* Slide 5 */}
+                    <div style={styles.slide}>
+    <div style={styles.dataPrevContainer}>
+        <h1>20% DE DESCONTO COM <br />O CUPOM:</h1>
+        <div style={styles.inactiveButton}>%20ROMANTICA</div>
+    </div>
+    <img src={NamoImg} alt="Imagem1" style={styles.image} />
+    <div style={styles.dataPrev}>
+        <h1>DIA DOS NAMORADOS</h1>
+        <div>Válido até: 12/06</div>
+    </div>
+</div>
+
+                    {/* Slide 6 */}
+                    <div style={styles.slide}>
+    <div style={styles.dataPrevContainer}>
+        <h1>20% DE DESCONTO COM <br />O CUPOM:</h1>
+        <div style={styles.inactiveButton}>%20ROMANTICA</div>
+    </div>
+    <img src={NamoImg} alt="Imagem1" style={styles.image} />
+    <div style={styles.dataPrev}>
+        <h1>DIA DOS NAMORADOS</h1>
+        <div>Válido até: 12/06</div>
+    </div>
+</div>
                     
                 </div>
             </div>
 
+            {/* Navegação manual */}
             <div style={styles.manualNavigation}>
-                <label
-                    onClick={() => changeSlide(0)}
-                    style={{
-                        ...styles.manualBtn,
-                        backgroundColor: activeSlide === 0 ? '#000' : '#fff',
-                        color: activeSlide === 0 ? '#FFF' : '#000'
-                    }}
-                ></label>
-                <label
-                    onClick={() => changeSlide(1)}
-                    style={{
-                        ...styles.manualBtn,
-                        backgroundColor: activeSlide === 1 ? '#000' : '#fff',
-                        color: activeSlide === 1 ? '#FFF' : '#000'
-                    }}
-                ></label>
-                <label
-                    onClick={() => changeSlide(2)}
-                    style={{
-                        ...styles.manualBtn,
-                        backgroundColor: activeSlide === 2 ? '#000' : '#fff',
-                        color: activeSlide === 2 ? '#FFF' : '#000'
-                    }}
-                ></label>
-                <label
-                    onClick={() => changeSlide(3)}
-                    style={{
-                        ...styles.manualBtn,
-                        backgroundColor: activeSlide === 3 ? '#000' : '#fff',
-                        color: activeSlide === 3 ? '#FFF' : '#000'
-                    }}
-                ></label>
-                <label
-                    onClick={() => changeSlide(4)}
-                    style={{
-                        ...styles.manualBtn,
-                        backgroundColor: activeSlide === 4 ? '#000' : '#fff',
-                        color: activeSlide === 4 ? '#FFF' : '#000'
-                    }}
-                ></label>
-
-
+                {[0, 1, 2, 3, 4].map((index) => (
+                    <label
+                        key={index}
+                        onClick={() => changeSlide(index)}
+                        style={{
+                            ...styles.manualBtn,
+                            backgroundColor: activeSlide === index ? '#000' : '#fff',
+                            color: activeSlide === index ? '#FFF' : '#000'
+                        }}
+                    ></label>
+                ))}
             </div>
 
             <div style={styles.content}>
