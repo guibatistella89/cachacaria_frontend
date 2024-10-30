@@ -108,7 +108,6 @@ const Cart = () => {
             <h2>Resumo</h2>
             <p>Valor dos produtos: <span>R$ {15 * quantities.amendoim + 15 * quantities.limaozinho},00</span></p>
             <p>Descontos: <span>R$ 0,00</span></p>
-            <p>Frete: <span>R$ 0,00</span></p>
             <h3>Total à prazo: <span>R$ {15 * quantities.amendoim + 15 * quantities.limaozinho + 5},00</span></h3>
             <h3>Total à vista no Pix: <span>R$ {15 * quantities.amendoim + 15 * quantities.limaozinho},00</span></h3>
 
@@ -116,7 +115,7 @@ const Cart = () => {
               <Link to="/checkout">
                 <Button>IR PARA O PAGAMENTO</Button>
               </Link>
-              <Link to="/">
+              <Link to="/catalog">
                 <Button secondary>CONTINUAR COMPRANDO</Button>
               </Link>
             </div>

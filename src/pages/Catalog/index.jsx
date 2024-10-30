@@ -25,16 +25,16 @@ export default function Catalog() {
 }
 
 const produtos = [
-    { id: 1, img: cachacaEscuro,    page: 'cachaca',    nome: 'Água de Cana Adoçada',   preco: '30,00',  categoria: 'Cachaça' },
-    { id: 2, img: vodkaEscuro,      page: 'vodka',      nome: 'The Brazilian Vodka',    preco: '40,00',  categoria: 'Vodka' },
-    { id: 3, img: limaozinhoEscuro, page: 'limaozinho', nome: 'Limãozinho',             preco: '25,00',  categoria: 'Licor' },
-    { id: 4, img: maracujaEscuro,   page: 'maracuja',   nome: 'Maracujá',               preco: '35,00',  categoria: 'Licor' },
-    { id: 5, img: canelinhaEscuro,  page: 'canelinha',  nome: 'Canelinha',              preco: '35,00',  categoria: 'Coquetel Alcoólico' },
-    { id: 6, img: cocoEscuro,       page: 'coco',       nome: 'Coco',                   preco: '35,00',  categoria: 'Coquetel Alcoólico' },
-    { id: 7, img: bitterEscuro,     page: 'bitter',     nome: 'Bitter',                 preco: '35,00',  categoria: 'Coquetel Alcoólico' },
-    { id: 8, img: mentaEscuro,      page: 'menta',      nome: 'Menta',                  preco: '35,00',  categoria: 'Coquetel Alcoólico' },
-    { id: 9, img: bananaEscuro,     page: 'banana',     nome: 'Banana',                 preco: '35,00',  categoria: 'Coquetel Alcoólico' },
-    { id: 10, img: amendoimEscuro,  page: 'amendoim',   nome: 'Amendoim',               preco: '35,00',  categoria: 'Coquetel Alcoólico' },
+    { id: 1, img: cachacaEscuro,    page: 'cachaca',    nome: 'Água de Cana Adoçada',   preco: '15,00',  categoria: 'Cachaça' },
+    { id: 2, img: vodkaEscuro,      page: 'vodka',      nome: 'The Brazilian Vodka',    preco: '15,00',  categoria: 'Vodka' },
+    { id: 3, img: limaozinhoEscuro, page: 'limaozinho', nome: 'Limãozinho',             preco: '15,00',  categoria: 'Licor' },
+    { id: 4, img: maracujaEscuro,   page: 'maracuja',   nome: 'Maracujá',               preco: '15,00',  categoria: 'Licor' },
+    { id: 5, img: canelinhaEscuro,  page: 'canelinha',  nome: 'Canelinha',              preco: '15,00',  categoria: 'Coquetel Alcoólico' },
+    { id: 6, img: cocoEscuro,       page: 'coco',       nome: 'Coco',                   preco: '15,00',  categoria: 'Coquetel Alcoólico' },
+    { id: 7, img: bitterEscuro,     page: 'bitter',     nome: 'Bitter',                 preco: '15,00',  categoria: 'Coquetel Alcoólico' },
+    { id: 8, img: mentaEscuro,      page: 'menta',      nome: 'Menta',                  preco: '15,00',  categoria: 'Coquetel Alcoólico' },
+    { id: 9, img: bananaEscuro,     page: 'banana',     nome: 'Banana',                 preco: '15,00',  categoria: 'Coquetel Alcoólico' },
+    { id: 10, img: amendoimEscuro,  page: 'amendoim',   nome: 'Amendoim',               preco: '15,00',  categoria: 'Coquetel Alcoólico' },
 ];
 
 function FullCatalogo() {

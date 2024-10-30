@@ -11,20 +11,20 @@ const styles = {
     header: {
         width: '100%',
         padding: '0px',
-        backgroundColor: '#000000',
+        backgroundColor: '#4a3a2a',
         boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
         display: 'flex',
         justifyContent: 'center',
         marginBottom: '20px',
     },
     logoHeader: {
-        height: '140px', 
+        height: '110px', 
     },
     title: {
         padding: '40px',
         fontSize: '30px',
         fontWeight: 'bold',
-        marginBottom: '-200px',
+        marginBottom: '-100px',
         color: '#4b3d2c',
     },
     loginContainer: {
@@ -67,6 +67,7 @@ const styles = {
         cursor: 'pointer',
         fontSize: '16px',
         marginTop: '20px',
+        marginBottom: '10px'
     },
     subtitle: {
         fontSize: '16px',

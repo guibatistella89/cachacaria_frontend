@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./styles.js";
-import logoHeader from "../../assets/logoheader.jpeg";
+import logoHeader from "../../assets/LOGO.png";
 import logoPreta from "../../assets/logopreta.jpeg"; 
+import GlobalStyle from "../../globalStyle/style.js";
 
 export default function Register() {
     return (
         <div style={styles.pageContainer}>
+            <GlobalStyle />
             <header style={styles.header}>
                 <img src={logoHeader} alt="Logo Cabeçalho" style={styles.logoHeader} />
             </header>

@@ -9,7 +9,7 @@ const Checkout = () => {
   return (
     <div>
       <Navbar />
-      <div className='body' style={styles.body}>               
+      <div className='body' style={styles.body}>
         <FullCheckout />
       </div>
     </div>
@@ -21,7 +21,7 @@ export default Checkout;
 function FullCheckout() {
   return (
     <CheckoutContainer>
-      <DataPanel greenButtonText="Salvar Informações" redButtonText="Sair"/>
+      <DataPanel greenButtonText="Salvar Informações" redButtonText="Sair da conta" />
       <FreightAndSummary>
         <FreightSection>
           <h3>Frete</h3>
@@ -51,7 +51,7 @@ function FullCheckout() {
         </SummarySection>
       </FreightAndSummary>
       <div className='SumaryBtn'>
-        <GlobalButtonLayout className="whiteBtn">Voltar</GlobalButtonLayout>
+        <Link to="/cart"><GlobalButtonLayout className="whiteBtn">Voltar</GlobalButtonLayout></Link>
         <GlobalButtonLayout className="yellowBtn">Continuar</GlobalButtonLayout>
       </div>
     </CheckoutContainer>
