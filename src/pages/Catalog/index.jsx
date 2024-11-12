@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles, { CatalogoContainer } from './styles.js';
 import Navbar from "../../components/navBar.jsx";
+import Footer from "../../components/footer.jsx";
 import cachacaEscuro from "../../assets/cachacaEscuro.jpg";
 import vodkaEscuro from "../../assets/vodkaEscuro.jpg";
 import limaozinhoEscuro from "../../assets/limaozinhoEscuro.jpg";
@@ -20,6 +21,7 @@ export default function Catalog() {
             <div style={styles.body}>
                 <FullCatalogo />
             </div>
+            <Footer />
         </div>
     );
 }
