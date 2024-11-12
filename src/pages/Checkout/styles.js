@@ -99,3 +99,10 @@ export const SummarySection = styled.div`
     }
   }
 `;
+
+export const CartImageContainer = styled.div`   
+  position: relative;
+  display: FLEX; 
+  justify-content: center; 
+  width: 100%;  
+`;
