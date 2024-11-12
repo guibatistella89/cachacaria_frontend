@@ -1,17 +1,23 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import GlobalStyle, { GlobalButtonLayout } from "../../globalStyle/style.js"; // Importando o estilo global
-import styles, { CheckoutContainer, FreightAndSummary, FreightSection, SummarySection } from './styles';
+import styles, { CheckoutContainer, FreightAndSummary, FreightSection, SummarySection, CartImageContainer} from './styles';
 import Navbar from "../../components/navBar.jsx";
+import Footer from "../../components/footer.jsx";
 import DataPanel from "../../components/dataPanel.jsx"
+import carrinhoStage from "../../assets/checkoutStage.png";
 
 const Checkout = () => {
   return (
     <div>
       <Navbar />
+      <CartImageContainer>
+           <img src={carrinhoStage} alt="Checkout" />
+      </CartImageContainer>
       <div className='body' style={styles.body}>
         <FullCheckout />
       </div>
+      <Footer />
     </div>
   );
 };
@@ -20,7 +26,7 @@ export default Checkout;
 
 function FullCheckout() {
   return (
-    <CheckoutContainer>
+    <CheckoutContainer>      
       <DataPanel greenButtonText="Salvar Informações" redButtonText="Sair da conta" />
       <FreightAndSummary>
         <FreightSection>
