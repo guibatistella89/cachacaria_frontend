@@ -21,7 +21,7 @@ function FullProfile() {
     return (
         <ProfileContainer>
             <div className="DataPanel">
-                <DataPanel greenButtonText="Salvar Informações" redButtonText="Excluir informações" />
+                <DataPanel redButtonText="Excluir informações" greenButtonText="Salvar Informações" />
             </div>
             <div className="OrderList">
                 <OrderList />
