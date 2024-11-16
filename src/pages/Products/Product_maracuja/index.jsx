@@ -7,6 +7,7 @@ import Navbar from "../../../components/navBar.jsx";
 import cachacaEscuro from "../../../assets/cachacaEscuro.jpg";
 import vodkaEscuro from "../../../assets/vodkaEscuro.jpg";
 import bitterEscuro from "../../../assets/bitterEscuro.jpg";
+import Footer from "../../../components/Footer.jsx";
 import canelinhaEscuro from "../../../assets/canelinhaEscuro.jpg";
 import bananaEscuro from "../../../assets/bananaEscuro.jpg";
 import limaozinhoEscuro from "../../../assets/limaozinhoEscuro.jpg";
@@ -130,6 +131,7 @@ function Maracuja() {
                     </div>
                 </MostWantedSection>
             </CartContainer>
+            <Footer/>
         </div>
     );
 }

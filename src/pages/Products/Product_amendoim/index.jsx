@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./styles.js";
+import Footer from "../../../components/Footer.jsx";
 import AmendoimImg from "../../../assets/Amendoim.jpeg";
 import Carrinho from "../../../assets/carrinho.png"
 import GlobalStyle from "../../../globalStyle/style.js"; // Importando o estilo global
@@ -129,6 +130,7 @@ function Amendoim() {
                     </div>
                 </MostWantedSection>
             </CartContainer>
+            <Footer />
         </div>
     );
 }

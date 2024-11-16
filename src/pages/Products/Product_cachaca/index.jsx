@@ -4,7 +4,7 @@ import CachacaImg from "../../../assets/Cachaca.jpeg";
 import Carrinho from "../../../assets/carrinho.png"
 import GlobalStyle from "../../../globalStyle/style.js"; // Importando o estilo global
 import Navbar from "../../../components/navBar.jsx";
-
+import Footer from "../../../components/Footer.jsx";
 import cachacaEscuro from "../../../assets/cachacaEscuro.jpg";
 import vodkaEscuro from "../../../assets/vodkaEscuro.jpg";
 import bitterEscuro from "../../../assets/bitterEscuro.jpg";
@@ -126,6 +126,7 @@ function Cachaca() {
                     </div>
                 </MostWantedSection>
             </CartContainer>
+            <Footer/>
         </div>
     );
 }

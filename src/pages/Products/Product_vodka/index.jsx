@@ -9,6 +9,7 @@ import vodkaEscuro from "../../../assets/vodkaEscuro.jpg";
 import bitterEscuro from "../../../assets/bitterEscuro.jpg";
 import canelinhaEscuro from "../../../assets/canelinhaEscuro.jpg";
 import bananaEscuro from "../../../assets/bananaEscuro.jpg";
+import Footer from "../../../components/Footer.jsx";
 import limaozinhoEscuro from "../../../assets/limaozinhoEscuro.jpg";
 import {
     CartContainer,
@@ -127,6 +128,7 @@ function Vodka() {
                     </div>
                 </MostWantedSection>
             </CartContainer>
+            <Footer/>
         </div>
     );
 }
