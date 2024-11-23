@@ -34,13 +34,14 @@ export const CartImage = styled.img`
 
 export const ProductItem = styled.div`
   display: flex;
-  justify-content: space-between; /* Garante que a imagem, informações e ações fiquem separadas */
+  justify-content: space-between; 
   background-color: #fff;
   padding: 20px;
   margin-bottom: 20px;
   border: 1px solid #e6e6e6;
   border-radius: 10px;
-  align-items: center; /* Alinha verticalmente os elementos */
+  align-items: center;  
+  height: 220px;
 
   img {
     width: 120px;
@@ -70,23 +71,26 @@ export const ProductItem = styled.div`
     display: flex;
     flex-direction: column;
     button {
-      background-color: red;
+      background-color: #564333;
       color: #fff;
       border: none;
       padding: 5px 10px;
       cursor: pointer;
       margin-top: 10px;
-    }
+    }      
   }
 `;
 
+
 export const QuantityControl = styled.div`
-  align-items: center;
-  margin-bottom: 10px;
-  margin-top:-20px;
+display: flex;
+align-items: baseline;
+margin-bottom: 10px;
+margin-top:-20px;
 
 
-  button {
+
+button {
     background-color: #ddd;
     border: none;
     padding: 5px 10px;
@@ -94,7 +98,7 @@ export const QuantityControl = styled.div`
     cursor: pointer;
     margin: 0 5px;
   }
-
+  
   input {
     width: 50px;
     text-align: center;
@@ -104,7 +108,18 @@ export const QuantityControl = styled.div`
     font-size: 16px;
   }
 `;
-
+    
+    export const NoProduct = styled.div`      
+      display: flex;
+      flex-direction: column;
+      align-items: center;      
+    
+      img {
+        width: 120px;
+        margin-right: 20px;
+        margin-bottom: 30px;
+      }
+    `;
 
 export const SummarySection = styled.div`
   background-color: #fff;
@@ -144,8 +159,10 @@ export const SummarySection = styled.div`
 `;
 
 export const Button = styled.button`
-  background-color: ${(props) => (props.secondary ? '#fff' : '#ff8800')};
-  color: ${(props) => (props.secondary ? '#ff8800' : '#fff')};
+  background-color: ${(props) => (props.$secondary ? '#fff' : '#ff8800')};
+  color: ${(props) => (props.$secondary ? '#ff8800' : '#fff')};
+  
+  
   border: none;
   font-size: 14px;
   padding: 10px;
