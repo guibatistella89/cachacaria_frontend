@@ -28,7 +28,7 @@ function FullCheckout() {
   return (
     <CheckoutContainer>      
       <DataPanel greenButtonText="Salvar Informações" redButtonText="Sair da conta" />
-      <FreightAndSummary>
+      {/* <FreightAndSummary>               >>>>>>>>>>>>>>>>>>>  Comentei pq não foi tratado ainda <<<<<<<<<<<<<<<<<<
         <FreightSection>
           <h3>Frete</h3>
           <div>
@@ -55,7 +55,7 @@ function FullCheckout() {
           <p>Frete: <span>R$ 18,20</span></p>
           <p>Total: <span>R$ 128,19</span></p>
         </SummarySection>
-      </FreightAndSummary>
+      </FreightAndSummary> */}
       <div className='SumaryBtn'>
         <Link to="/cart"><GlobalButtonLayout className="whiteBtn">Voltar</GlobalButtonLayout></Link>
         <GlobalButtonLayout className="yellowBtn">Continuar</GlobalButtonLayout>

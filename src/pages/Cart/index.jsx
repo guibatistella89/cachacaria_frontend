@@ -23,7 +23,7 @@ const Cart = () => {
   const [total, setTotal] = useState(0);
   const [cupomObj, setCupomObj] = useState(null);
   const [idCupomCartUser, setidCupomCartUser] = useState('');
-  const idUser = 3;               // Aqui vai o idUser, porém ainda não sei como recuperar essa informação quando o cara estiver logado
+  const idUser = 3;               // Aqui vai o idUser
 
 
 
@@ -128,6 +128,8 @@ const Cart = () => {
     setCart(updatedCart);
 
   }
+
+    
 
   //
   // Altera quantidade item carrinho

@@ -1,7 +1,8 @@
 import { GlobalButtonLayout } from "../globalStyle/style.js";
 import { FormSection, InputGroup, AddressSection, DataContainer } from '../components/style.js';
+import { useState, useEffect } from 'react';
+import api from '../api/api.js';
 import axios from 'axios';
-import { useState } from 'react';
 import CitySelector from './CitySelector';
 
 function DataPanel({ greenButtonText, redButtonText, userId }) {
@@ -15,18 +16,49 @@ function DataPanel({ greenButtonText, redButtonText, userId }) {
     const [complemento, setComplemento] = useState('');
     const [selectedCity, setSelectedCity] = useState(null);
 
-    const testUserId = userId || 31;
+    const idUserSession = userId || 3;
+
+    useEffect(() => {
+        const getUserIdent = async () => {
+            try {
+                const response = await api.get(`/api/ident/${idUserSession}`);
+                if (response.data.message === 'IdentNotFound') {
+                    return;
+                }
+                const userData = response.data;
+                console.log(userData);
+
+                const formattedDate = userData.dta_nascimento 
+                ? new Date(userData.dta_nascimento).toISOString().split('T')[0]
+                : '';
+
+                setNome(userData.nome || '');
+                setTelefone(userData.telefone || '');
+                setWhatsapp(userData.whatsapp || '');
+                setDtaNascimento(formattedDate || '');
+                setCep(userData.cep || '');
+                setLogradouro(userData.logradouro || '');
+                setNumero(userData.numero || '');
+                setComplemento(userData.complemento || '');
+                setSelectedCity(userData.id_cidade || null);
+            } catch (error) {
+                console.error("Erro ao carregar os dados do usuário:", error);
+                alert("Erro ao carregar os dados do usuário.");
+            }
+        };
+        getUserIdent();
+    }, [idUserSession]);
 
     const handleSave = async () => {
         try {
-            if (!testUserId || !selectedCity) {
+            if (!idUserSession || !selectedCity) {
                 console.error("User ID ou cidade não disponível");
                 alert("Erro: ID do usuário ou cidade não encontrado.");
                 return;
             }
 
             const data = {
-                userId: testUserId,
+                userId: idUserSession,
                 nome: nome,
                 telefone: telefone,
                 whatsapp: whatsapp,
@@ -42,17 +74,17 @@ function DataPanel({ greenButtonText, redButtonText, userId }) {
 
             if (response.status === 200) {
                 console.log("Identificação salva com sucesso!", response.data);
-                clearFields();
                 alert("Dados Salvos com Sucesso!");
             }
         } catch (error) {
             console.error("Erro ao salvar identificação:", error);
-            alert("Erro ao salvar identificação. Tente novamente.");
+            alert("Erro ao salvar identificação. Verifique se existem campos em branco e tente novamente.");
         }
     };
 
     const handleClear = () => {
         clearFields();
+        alert('Erro ao exlcuir informações');
     };
 
     const clearFields = () => {

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./styles.js";
 import Footer from "../../../components/Footer.jsx";
+import api from '../../../api/api.js';
 import AmendoimImg from "../../../assets/Amendoim.jpeg";
 import Carrinho from "../../../assets/carrinho.png"
 import GlobalStyle from "../../../globalStyle/style.js"; // Importando o estilo global
@@ -18,11 +19,27 @@ import {
 } from './styles';
 
 function Amendoim() {
-    // Estado para a quantidade
+    const IdProd = 10;  // deve passar o id do produto
+    const IdUser = 3;  // deve passar o id do usuário
+    const [product, setProduct] = useState([]);
     const [quantidade, setQuantidade] = useState(1);
 
+    useEffect(() => {
+        async function loadProduct() {
+            const response = await api.get(`/api/product/${IdProd}`);
+            setProduct(response.data); // Aqui eu alimento minha state com as informações do produto
+        }
+        loadProduct();
+    }, [])
+
+
+
     // Função para incrementar a quantidade
-    const incrementar = () => {
+    function incrementar() {
+        console.log(product.qtd_fisica);
+        if ((quantidade + 1) > product.qtd_fisica) {
+            return alert("Estoque insuficiente para a quantidade solicitada");
+        }
         setQuantidade(quantidade + 1);
     };
 
@@ -31,6 +48,24 @@ function Amendoim() {
         if (quantidade > 1) {  // Impede que a quantidade seja menor que 1
             setQuantidade(quantidade - 1);
         }
+    };
+
+    function insertItemCart() {
+                async function insertProduct() {
+            try {
+                await api.post('/api/cart/insertItem', {
+                    IdUser: IdUser,
+                    IdProd: IdProd,
+                    quantidade: quantidade,
+                    idTransp: 1,
+                    idCupom: 1,
+                });
+                alert('Produto adicionado ao carrinho');
+            } catch (error) {
+                alert('Este item já foi adicionado no carrinho');
+            }
+        }
+        insertProduct();
     };
 
     return (
@@ -45,8 +80,8 @@ function Amendoim() {
                     <div style={styles.text}>
                         <h1 style={styles.title}>Coquetel amendoim 900ml</h1>
                         <span style={styles.descricao}>
-                        Um sabor único e surpreendente, com notas salgadas e adocicadas do amendoim. Perfeito para quem busca uma
-                        experiência inusitada e deliciosa, ideal para descontrair em boa companhia.
+                            Um sabor único e surpreendente, com notas salgadas e adocicadas do amendoim. Perfeito para quem busca uma
+                            experiência inusitada e deliciosa, ideal para descontrair em boa companhia.
                         </span>
                         <div style={styles.ingredientes}>
                             <span style={styles.ingredientesText}>Ingredientes:</span>
@@ -59,20 +94,20 @@ function Amendoim() {
                             <span>Goma Xantana ins 415.</span>
                             <br />
                             <span style={styles.vol}>13,9% vol.</span>
-                            <span style={styles.estoque}>Quantidade em estoque: 30</span>
+                            <span style={styles.estoque}>{`Quantidade em estoque:${product.qtd_fisica} `}</span>
                         </div>
                         <div style={styles.compra}>
                             <span style={styles.preco}>Valor: R$ 15,00</span>
                             <div style={styles.botoesCompra}>
                                 {/* Botão de quantidade */}
                                 <div style={styles.qtde}>
-                                    <button style={styles.buttonQtde} onClick={decrementar}>-</button>
+                                    <button style={styles.buttonQtde} onClick={() => decrementar()}>-</button>
                                     <span style={styles.spanQtde}>{quantidade}</span>
-                                    <button style={styles.buttonQtde} onClick={incrementar}>+</button>
+                                    <button style={styles.buttonQtde} onClick={() => incrementar()}>+</button>
                                 </div>
 
                                 {/* Botão "Comprar" */}
-                                <button style={styles.buttonComprar}>
+                                <button style={styles.buttonComprar} onClick={() => insertItemCart()}>
                                     <img src={Carrinho} alt="Carrinho" style={styles.buttonIcon} />
                                     <span>Comprar</span>
                                 </button>

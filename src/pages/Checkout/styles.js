@@ -31,6 +31,7 @@ export const CheckoutContainer = styled.div`
   }
   
   .SumaryBtn {
+    margin-top: 50px;
     display: flex;    
     justify-content: space-between;
     gap: 25%;
