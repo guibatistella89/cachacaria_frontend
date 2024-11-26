@@ -11,9 +11,9 @@ export default function summary({ total, cupom, converToOrder, lenghtCart }) {
         codigo: '',
         percentual_desc: 0,
     }
-
+    
     const objCupom = cupom ? cupom : cupomDefault;
-    const totalComDesconto = total - (total * 10 / 100);
+    const totalComDesconto = total;
     const formatPrice = (price) => {
         return price ? price.toFixed(2).replace('.', ',') : '0,00'; // 
     };
@@ -40,10 +40,10 @@ export default function summary({ total, cupom, converToOrder, lenghtCart }) {
 
             <div className="buttons">
                 <Link to="/checkout">
-                    <Button onClick={() => handleGeraPedido()} disabled={lenghtCart <= 0} style={{ cursor: lenghtCart <= 0 ? 'not-allowed' : 'pointer' }}>IR PARA O PAGAMENTO</Button>
+                    <Button onClick={() => handleGeraPedido()} disabled={lenghtCart <= 0} style={{ cursor: lenghtCart <= 0 ? 'not-allowed' : 'pointer' }}>CONTINUAR A COMPRA</Button>
                 </Link>
                 <Link to="/catalog">
-                    <Button $secondary>CONTINUAR COMPRANDO</Button>
+                    <Button $secondary>VOLTAR AO CATÁLOGO</Button>
                 </Link>
             </div>
         </SummarySection>

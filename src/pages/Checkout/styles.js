@@ -12,6 +12,11 @@ const styles = {
   },
 };
 
+const Link = styled.a`
+    text-decoration: none;  /* Remove o sublinhado */
+    color: inherit;         /* Mantém a cor original ou define uma cor personalizada */
+`;
+
 export default styles;
 
 export const CheckoutContainer = styled.div`
