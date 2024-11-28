@@ -19,7 +19,7 @@ function DataPanel({ greenButtonText, redButtonText, userId }) {
     const [selectedCity, setSelectedCity] = useState(null);
     const { logout } = useAuth();
 
-    const idUserSession = userId || 8;
+    const idUserSession = userId || 3;
 
     useEffect(() => {
         const getUserIdent = async () => {
@@ -119,6 +119,7 @@ function DataPanel({ greenButtonText, redButtonText, userId }) {
                 alert("Conta Exlcuída com Sucesso!");
             }
             clearFields();
+            logout();
         } catch (error) {
             alert('Erro ao exlcuir conta. Tente novamente mais tarde.');
             console.error("Erro ao excluir dados:", error);
