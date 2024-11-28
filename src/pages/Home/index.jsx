@@ -4,6 +4,18 @@ import NamoImg from "../../assets/Dia_dos_namorados.jpg";
 import styles from "./styles.js";
 import Navbar from "../../components/navBar.jsx";
 import Footer from "../../components/Footer.jsx";
+import cachacaEscuro from "../../assets/cachacaEscuro.jpg";
+import vodkaEscuro from "../../assets/vodkaEscuro.jpg";
+import bitterEscuro from "../../assets/bitterEscuro.jpg";
+import canelinhaEscuro from "../../assets/canelinhaEscuro.jpg";
+import bananaEscuro from "../../assets/bananaEscuro.jpg";
+import limaozinhoEscuro from "../../assets/limaozinhoEscuro.jpg";
+
+import {
+    CartContainer,
+    MostWantedSection,
+    ProductCard,
+} from './styles';
 
 function Home() {
     const [activeSlide, setActiveSlide] = useState(0);
@@ -23,7 +35,7 @@ function Home() {
                     <div style={styles.slide}>
     <div style={styles.dataPrevContainer}>
         <h1>20% DE DESCONTO COM <br />O CUPOM:</h1>
-        <div style={styles.inactiveButton}>%20ROMANTICA</div>
+        <div style={styles.inactiveButton}>CUPOM20</div>
     </div>
     <img src={NamoImg} alt="Imagem1" style={styles.image} />
     <div style={styles.dataPrev}>
@@ -36,7 +48,7 @@ function Home() {
                     <div style={styles.slide}>
     <div style={styles.dataPrevContainer}>
         <h1>20% DE DESCONTO COM <br />O CUPOM:</h1>
-        <div style={styles.inactiveButton}>%20ROMANTICA</div>
+        <div style={styles.inactiveButton}>CUPOM20</div>
     </div>
     <img src={NamoImg} alt="Imagem1" style={styles.image} />
     <div style={styles.dataPrev}>
@@ -49,7 +61,7 @@ function Home() {
                     <div style={styles.slide}>
     <div style={styles.dataPrevContainer}>
         <h1>20% DE DESCONTO COM <br />O CUPOM:</h1>
-        <div style={styles.inactiveButton}>%20ROMANTICA</div>
+        <div style={styles.inactiveButton}>CUPOM20</div>
     </div>
     <img src={NamoImg} alt="Imagem1" style={styles.image} />
     <div style={styles.dataPrev}>
@@ -62,7 +74,7 @@ function Home() {
                     <div style={styles.slide}>
     <div style={styles.dataPrevContainer}>
         <h1>20% DE DESCONTO COM <br />O CUPOM:</h1>
-        <div style={styles.inactiveButton}>%20ROMANTICA</div>
+        <div style={styles.inactiveButton}>CUPOM20</div>
     </div>
     <img src={NamoImg} alt="Imagem1" style={styles.image} />
     <div style={styles.dataPrev}>
@@ -75,7 +87,7 @@ function Home() {
                     <div style={styles.slide}>
     <div style={styles.dataPrevContainer}>
         <h1>20% DE DESCONTO COM <br />O CUPOM:</h1>
-        <div style={styles.inactiveButton}>%20ROMANTICA</div>
+        <div style={styles.inactiveButton}>CUPOM20</div>
     </div>
     <img src={NamoImg} alt="Imagem1" style={styles.image} />
     <div style={styles.dataPrev}>
@@ -88,7 +100,7 @@ function Home() {
                     <div style={styles.slide}>
     <div style={styles.dataPrevContainer}>
         <h1>20% DE DESCONTO COM <br />O CUPOM:</h1>
-        <div style={styles.inactiveButton}>%20ROMANTICA</div>
+        <div style={styles.inactiveButton}>CUPOM20</div>
     </div>
     <img src={NamoImg} alt="Imagem1" style={styles.image} />
     <div style={styles.dataPrev}>
@@ -118,8 +130,56 @@ function Home() {
             <div style={styles.content}>
                 <h1 style={styles.h1}>Bebidas Mais Vendidas!</h1> 
             </div>
-
-            <Footer />
+            <CartContainer>
+                <MostWantedSection>
+                    <h2>Mais procurados</h2>
+                    <div className="product-grid">
+                        <ProductCard>
+                            <img src={vodkaEscuro} alt="Vodka" />
+                            <div className="info">
+                                <h3>VODKA 900ml</h3>
+                                <p>R$ 15,00</p>
+                            </div>
+                        </ProductCard>
+                        <ProductCard>
+                            <img src={cachacaEscuro} alt="Cachaça" />
+                            <div className="info">
+                                <h3>CACHAÇA 900ml</h3>
+                                <p>R$ 15,00</p>
+                            </div>
+                        </ProductCard>
+                        <ProductCard>
+                            <img src={canelinhaEscuro} alt="Canelinha" />
+                            <div className="info">
+                                <h3>CANELINHA 900ml</h3>
+                                <p>R$ 15,00</p>
+                            </div>
+                        </ProductCard>
+                        <ProductCard>
+                            <img src={bananaEscuro} alt="Banana" />
+                            <div className="info">
+                                <h3>BANANA 900ml</h3>
+                                <p>R$ 15,00</p>
+                            </div>
+                        </ProductCard>
+                        <ProductCard>
+                            <img src={limaozinhoEscuro} alt="Limãozinho" />
+                            <div className="info">
+                                <h3>LIMÃOZINHO 900ml</h3>
+                                <p>R$ 15,00</p>
+                            </div>
+                        </ProductCard>
+                        <ProductCard>
+                            <img src={bitterEscuro} alt="Bitter" />
+                            <div className="info">
+                                <h3>BITTER 900ml</h3>
+                                <p>R$ 15,00</p>
+                            </div>
+                        </ProductCard>
+                    </div>
+                </MostWantedSection>
+            </CartContainer>
+        <Footer />
         </div>
     );
 }

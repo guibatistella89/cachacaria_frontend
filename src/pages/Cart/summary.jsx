@@ -39,10 +39,10 @@ export default function summary({ total, cupom, converToOrder, lenghtCart }) {
 
             <div className="buttons">
                 <Link to="/checkout">
-                    <Button onClick={() => handleGeraPedido()} disabled={lenghtCart <= 0} style={{ cursor: lenghtCart <= 0 ? 'not-allowed' : 'pointer' }}>IR PARA O PAGAMENTO</Button>
+                    <Button onClick={() => handleGeraPedido()} disabled={lenghtCart <= 0} style={{ cursor: lenghtCart <= 0 ? 'not-allowed' : 'pointer' }}>CONTINUAR A COMPRA</Button>
                 </Link>
                 <Link to="/catalog">
-                    <Button $secondary>CONTINUAR COMPRANDO</Button>
+                    <Button $secondary>VOLTAR AO CATÁLOGO</Button>
                 </Link>
             </div>
         </SummarySection>
