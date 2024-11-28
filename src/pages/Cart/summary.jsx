@@ -12,8 +12,7 @@ export default function summary({ total, cupom, converToOrder, lenghtCart }) {
         percentual_desc: 0,
     }
 
-    const objCupom = cupom ? cupom : cupomDefault;
-    const totalComDesconto = total - (total * 10 / 100);
+    const objCupom = cupom ? cupom : cupomDefault;    
     const formatPrice = (price) => {
         return price ? price.toFixed(2).replace('.', ',') : '0,00'; // 
     };
@@ -36,7 +35,7 @@ export default function summary({ total, cupom, converToOrder, lenghtCart }) {
             <p>Valor dos Produtos: <span>R$ {formatPrice(total)}</span></p>
             <p>Descontos: <span>R$ {formatPrice(total * objCupom.percentual_desc / 100)} </span></p>
             <p>Cupom de Desconto: <span>{objCupom.codigo}</span></p>
-            <h3>Total com Desconto: <span>R$ {formatPrice(totalComDesconto)}</span></h3>
+            <h3>Total com Desconto: <span>R$ {formatPrice(total - (total * objCupom.percentual_desc / 100))}</span></h3>
 
             <div className="buttons">
                 <Link to="/checkout">
