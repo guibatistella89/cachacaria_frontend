@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import GlobalStyle from "../../globalStyle/style.js";
 import NamoImg from "../../assets/Dia_dos_namorados.jpg";
+import blackFriday from "../../assets/blackCachaca.webp";
+import Halloween from "../../assets/Halloween.jpg";
+import natal from "../../assets/natalPromotion.jpg";
+import pascoa from "../../assets/felizPascoa.jpg";
 import styles from "./styles.js";
 import Navbar from "../../components/navBar.jsx";
 import Footer from "../../components/Footer.jsx";
@@ -37,23 +41,23 @@ function Home() {
         <h1>20% DE DESCONTO COM <br />O CUPOM:</h1>
         <div style={styles.inactiveButton}>CUPOM20</div>
     </div>
-    <img src={NamoImg} alt="Imagem1" style={styles.image} />
+    <img src={blackFriday} alt="Imagem1" style={styles.image} />
     <div style={styles.dataPrev}>
-        <h1>DIA DOS NAMORADOS</h1>
-        <div>Válido até: 12/06</div>
+        <h1>A Black Friday CHEGOU!</h1>
+        <div>Válido até: 29/11/2024</div>
     </div>
 </div>
 
                     {/* Slide 2 */}
                     <div style={styles.slide}>
     <div style={styles.dataPrevContainer}>
-        <h1>20% DE DESCONTO COM <br />O CUPOM:</h1>
-        <div style={styles.inactiveButton}>CUPOM20</div>
+        <h1>10% DE DESCONTO COM <br />O CUPOM:</h1>
+        <div style={styles.inactiveButton}>CUPOM10</div>
     </div>
-    <img src={NamoImg} alt="Imagem1" style={styles.image} />
+    <img src={Halloween} alt="Imagem1" style={styles.image} />
     <div style={styles.dataPrev}>
-        <h1>DIA DOS NAMORADOS</h1>
-        <div>Válido até: 12/06</div>
+        <h1>Um desconto assustador '0'</h1>
+        <div>Válido até: 31/10/2024</div>
     </div>
 </div>
 
@@ -63,10 +67,10 @@ function Home() {
         <h1>20% DE DESCONTO COM <br />O CUPOM:</h1>
         <div style={styles.inactiveButton}>CUPOM20</div>
     </div>
-    <img src={NamoImg} alt="Imagem1" style={styles.image} />
+    <img src={natal} alt="Imagem1" style={styles.image} />
     <div style={styles.dataPrev}>
-        <h1>DIA DOS NAMORADOS</h1>
-        <div>Válido até: 12/06</div>
+        <h1>FELIZ NATAL COM PRESENTÃO</h1>
+        <div>Válido até: 25/12/2024</div>
     </div>
 </div>
 
@@ -76,9 +80,9 @@ function Home() {
         <h1>20% DE DESCONTO COM <br />O CUPOM:</h1>
         <div style={styles.inactiveButton}>CUPOM20</div>
     </div>
-    <img src={NamoImg} alt="Imagem1" style={styles.image} />
+    <img src={pascoa} alt="Imagem1" style={styles.image} />
     <div style={styles.dataPrev}>
-        <h1>DIA DOS NAMORADOS</h1>
+        <h1>Adoce sua vida com CUPOM</h1>
         <div>Válido até: 12/06</div>
     </div>
 </div>
