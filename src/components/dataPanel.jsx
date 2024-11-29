@@ -1,11 +1,13 @@
 import { GlobalButtonLayout } from "../globalStyle/style.js";
 import { FormSection, InputGroup, AddressSection, DataContainer } from '../components/style.js';
 import { useState, useEffect } from 'react';
+import { useAuth } from "../auth/AuthContext.jsx";
 import api from '../api/api.js';
 import axios from 'axios';
 import CitySelector from './CitySelector';
 
 function DataPanel({ greenButtonText, redButtonText, userId }) {
+    const [idIDent, setIdIdent] = useState('');
     const [nome, setNome] = useState('');
     const [telefone, setTelefone] = useState('');
     const [whatsapp, setWhatsapp] = useState('');
@@ -15,6 +17,7 @@ function DataPanel({ greenButtonText, redButtonText, userId }) {
     const [numero, setNumero] = useState('');
     const [complemento, setComplemento] = useState('');
     const [selectedCity, setSelectedCity] = useState(null);
+    const { logout } = useAuth();
 
     const idUserSession = userId || 3;
 
@@ -26,12 +29,11 @@ function DataPanel({ greenButtonText, redButtonText, userId }) {
                     return;
                 }
                 const userData = response.data;
-                console.log(userData);
+                const formattedDate = userData.dta_nascimento
+                    ? new Date(userData.dta_nascimento).toISOString().split('T')[0]
+                    : '';
 
-                const formattedDate = userData.dta_nascimento 
-                ? new Date(userData.dta_nascimento).toISOString().split('T')[0]
-                : '';
-
+                setIdIdent(userData.id_identificacao || '');
                 setNome(userData.nome || '');
                 setTelefone(userData.telefone || '');
                 setWhatsapp(userData.whatsapp || '');
@@ -40,7 +42,12 @@ function DataPanel({ greenButtonText, redButtonText, userId }) {
                 setLogradouro(userData.logradouro || '');
                 setNumero(userData.numero || '');
                 setComplemento(userData.complemento || '');
-                setSelectedCity(userData.id_cidade || null);
+
+                // busca cidade por ID
+                if (userData.id_cidade) {
+                    const cityResponse = await axios.get(`http://localhost:3001/api/cities/${userData.id_cidade}`);
+                    setSelectedCity(cityResponse.data || null);
+                }
             } catch (error) {
                 console.error("Erro ao carregar os dados do usuário:", error);
                 alert("Erro ao carregar os dados do usuário.");
@@ -48,6 +55,7 @@ function DataPanel({ greenButtonText, redButtonText, userId }) {
         };
         getUserIdent();
     }, [idUserSession]);
+
 
     const handleSave = async () => {
         try {
@@ -70,11 +78,19 @@ function DataPanel({ greenButtonText, redButtonText, userId }) {
                 id_cidade: selectedCity.id,
             };
 
-            const response = await axios.post('http://localhost:3001/api/users/add-identification', data);
+            if (!idIDent) {
+                const response = await axios.post('http://localhost:3001/api/users/add-identification', data);
+                if (response.status === 200) {
+                    alert("Dados Salvos com Sucesso!");
+                    window.location.reload(); // Recarrega a página
+                }
 
-            if (response.status === 200) {
-                console.log("Identificação salva com sucesso!", response.data);
-                alert("Dados Salvos com Sucesso!");
+            } else {
+                const updatedData = { ...data, id_ident: idIDent };
+                const response = await api.post('/api/ident/updateIdent', updatedData);
+                if (response.status === 200) {
+                    alert("Dados Atualizados com Sucesso!");
+                }
             }
         } catch (error) {
             console.error("Erro ao salvar identificação:", error);
@@ -82,9 +98,33 @@ function DataPanel({ greenButtonText, redButtonText, userId }) {
         }
     };
 
-    const handleClear = () => {
-        clearFields();
-        alert('Erro ao exlcuir informações');
+
+    const handleRedButtonClick = () => {
+        if (redButtonText === "Excluir informações") {
+            handleClear();
+        } else if (redButtonText === "Sair da conta") {
+            handleLogout(); // Certifique-se de criar a função handleLogout
+        }
+    };
+
+    const handleClear = async () => {
+        try {
+            const response = await api.delete('/api/ident/deleteIdent/', {
+                data:{
+                    id_user: idUserSession,
+                    id_ident: idIDent
+                }
+            });
+            if (response.status === 200) {
+                alert("Conta Exlcuída com Sucesso!");
+            }
+            clearFields();
+            logout();
+        } catch (error) {
+            alert('Erro ao exlcuir conta. Tente novamente mais tarde.');
+            console.error("Erro ao excluir dados:", error);
+        }
+
     };
 
     const clearFields = () => {
@@ -96,8 +136,19 @@ function DataPanel({ greenButtonText, redButtonText, userId }) {
         setLogradouro('');
         setNumero('');
         setComplemento('');
-        setSelectedCity(null);
+        setSelectedCity(' ');
     };
+
+    const handleLogout = () => {
+        try {
+            alert("Você escolheu sair da conta");
+            logout();
+        } catch (error) {
+            console.error("Erro ao sair da conta:", error);
+            alert("Erro ao sair da conta. Tente novamente.");
+        }
+    };
+
 
     return (
         <DataContainer>
@@ -116,10 +167,11 @@ function DataPanel({ greenButtonText, redButtonText, userId }) {
                         numero={numero} setNumero={setNumero}
                         complemento={complemento} setComplemento={setComplemento}
                         onSelectCity={setSelectedCity}
+                        initialCity={selectedCity}
                     />
                 </div>
                 <div className='SumaryBtn'>
-                    <GlobalButtonLayout className="redBtn" onClick={handleClear}>{redButtonText}</GlobalButtonLayout>
+                    <GlobalButtonLayout className="redBtn" onClick={handleRedButtonClick}>{redButtonText}</GlobalButtonLayout>
                     <GlobalButtonLayout className="greenBtn" onClick={handleSave}>{greenButtonText}</GlobalButtonLayout>
                 </div>
             </div>
@@ -132,7 +184,7 @@ function DataForm({ nome, setNome, telefone, setTelefone, whatsapp, setWhatsapp,
         <FormSection>
             <h3>Dados Pessoais:</h3>
             <InputGroup>
-                <label htmlFor="fullName">Nome Completo</label>
+                <label htmlFor="fullName">Nome Completo*</label>
                 <input
                     id="fullName"
                     type="text"
@@ -142,7 +194,7 @@ function DataForm({ nome, setNome, telefone, setTelefone, whatsapp, setWhatsapp,
                 />
             </InputGroup>
             <InputGroup>
-                <label htmlFor="phone">Telefone</label>
+                <label htmlFor="phone">Telefone*</label>
                 <input
                     id="phone"
                     type="tel"
@@ -175,12 +227,12 @@ function DataForm({ nome, setNome, telefone, setTelefone, whatsapp, setWhatsapp,
     );
 }
 
-function AddressForm({ cep, setCep, logradouro, setLogradouro, numero, setNumero, complemento, setComplemento, onSelectCity }) {
+function AddressForm({ cep, setCep, logradouro, setLogradouro, numero, setNumero, complemento, setComplemento, onSelectCity, initialCity }) {
     return (
         <AddressSection>
             <h3>Endereço de Entrega:</h3>
             <InputGroup>
-                <label htmlFor="cep">CEP</label>
+                <label htmlFor="cep">CEP*</label>
                 <input
                     id="cep"
                     type="text"
@@ -219,8 +271,8 @@ function AddressForm({ cep, setCep, logradouro, setLogradouro, numero, setNumero
                 />
             </InputGroup>
             <InputGroup>
-                <label htmlFor="city">Cidade</label>
-                <CitySelector onSelectCity={onSelectCity} />
+                <label htmlFor="city">Cidade*</label>
+                <CitySelector onSelectCity={onSelectCity} initialCity={initialCity} />
             </InputGroup>
         </AddressSection>
     );

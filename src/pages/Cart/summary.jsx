@@ -11,9 +11,8 @@ export default function summary({ total, cupom, converToOrder, lenghtCart }) {
         codigo: '',
         percentual_desc: 0,
     }
-    
-    const objCupom = cupom ? cupom : cupomDefault;
-    const totalComDesconto = total;
+
+    const objCupom = cupom ? cupom : cupomDefault;    
     const formatPrice = (price) => {
         return price ? price.toFixed(2).replace('.', ',') : '0,00'; // 
     };

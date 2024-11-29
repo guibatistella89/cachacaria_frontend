@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 
-const CitySelector = ({ onSelectCity }) => {
+const CitySelector = ({ onSelectCity, initialCity }) => {
   const [cities, setCities] = useState([]);
+  const [selectedCity, setSelectedCity] = useState(initialCity || null);
 
-  
+  useEffect(() => {
+    if (initialCity) {
+      setSelectedCity(initialCity); // Define a cidade inicial
+    }
+  }, [initialCity]);
+
   const fetchCities = async (query) => {
     try {
       const response = await axios.get(`http://localhost:3001/api/cities?query=${query}`);
@@ -16,12 +22,18 @@ const CitySelector = ({ onSelectCity }) => {
     }
   };
 
+  const handleCityChange = (event, value) => {
+    setSelectedCity(value);
+    onSelectCity(value);
+  };
+
   return (
     <Autocomplete
       options={cities}
-      getOptionLabel={(option) => option.nome} // Mostra o nome da cidade
+      getOptionLabel={(option) => option.nome || ''} // Mostra o nome da cidade
+      value={selectedCity} // Define o valor selecionado
       onInputChange={(event, value) => fetchCities(value)} // Busca cidades quando o usuário digita
-      onChange={(event, value) => onSelectCity(value)} // Envia a cidade selecionada
+      onChange={handleCityChange} // Atualiza a cidade selecionada
       renderInput={(params) => <TextField {...params} label="Cidade" />}
     />
   );
